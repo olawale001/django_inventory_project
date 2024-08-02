@@ -1,0 +1,14 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+    <h2>Inventory List</h2>
+    <ul>
+        {% for item in items %}
+            <li>
+                <a href="{% url 'inventory_detail' item.pk %}">{{ item.name }}</a> 
+                - <a href="{% url 'update_item' item.pk %}">Edit</a> 
+                - <a href="{% url 'delete_item' item.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

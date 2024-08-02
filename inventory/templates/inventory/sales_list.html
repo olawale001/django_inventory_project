@@ -1,0 +1,12 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+    <h2>Sales List</h2>
+    <ul>
+        {% for sale in sales %}
+            <li>
+                Sale {{ sale.id }} from Order {{ sale.order.id }} - {{ sale.date_sold }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

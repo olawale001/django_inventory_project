@@ -1,0 +1,14 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+    <h2>Order List</h2>
+    <ul>
+        {% for order in orders %}
+            <li>
+                Order {{ order.id }} by {{ order.customer.username }} - {{ order.date_ordered }}
+                - <a href="{% url 'order_detail' order.pk %}">View</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_order' %}">Add Order</a>
+{% endblock %}

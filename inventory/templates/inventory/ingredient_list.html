@@ -1,0 +1,15 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+    <h2>Ingredient List</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>
+                {{ ingredient.name }} - {{ ingredient.quantity }} {{ ingredient.unit }}
+                - <a href="{% url 'update_ingredient' ingredient.pk %}">Edit</a>
+                - <a href="{% url 'delete_ingredient' ingredient.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_ingredient' %}">Add Ingredient</a>
+{% endblock %}

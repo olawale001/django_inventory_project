@@ -1,0 +1,35 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<div class="homepage-container">
+    <header class="header">
+        <h1>Welcome to the Bakery Inventory Management System</h1>
+        <p>Manage your bakery's inventory, orders, and sales efficiently.</p>
+        <a href="{% url 'dashboard' %}" class="btn-main">Go to Dashboard</a>
+    </header>
+
+    <section class="features">
+        <div class="feature-item">
+            {% comment %} <img src="{% static 'images/inventory.png' %}" alt="Inventory Icon" class="feature-icon"> {% endcomment %}
+            <h2>Manage Inventory</h2>
+            <p>Keep track of all your bakery items, their quantities, and expiration dates.</p>
+            <a href="{% url 'inventory_list' %}" class="btn-secondary">View Inventory</a>
+        </div>
+        <div class="feature-item">
+            <h2>Manage Ingredients</h2>
+            <p>Ensure you have all the necessary ingredients for your recipes.</p>
+            <a href="{% url 'ingredient_list' %}" class="btn-secondary">View Ingredients</a>
+        </div>
+        <div class="feature-item">
+            <h2>Track Orders</h2>
+            <p>Monitor customer orders and manage them efficiently.</p>
+            <a href="{% url 'order_list' %}" class="btn-secondary">View Orders</a>
+        </div>
+        <div class="feature-item">
+            <h2>Sales Overview</h2>
+            <p>Analyze your bakery’s sales to boost your business.</p>
+            <a href="{% url 'sales_list' %}" class="btn-secondary">View Sales</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
